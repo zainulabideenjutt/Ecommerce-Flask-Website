@@ -1,0 +1,48 @@
+<style>
+  .modal-content {
+    background-color: #212121;
+    color: white;
+  }
+</style>
+<!-- owned_items_modal -->
+<div
+  class="modal fade"
+  id="sellModal-{{owned_item.id}}"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{owned_item.name}}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <form method="post">
+            {{sell_form.hidden_tag()}}
+          <h4>
+            Are you sure you want to sell {{owned_item.name}} for {{owned_item.price}}$
+          </h4>
+          <br>
+          <h6>
+              By Clicking Sell You will put this Item back to the Market.
+          </h6>
+          <br>
+          <input id="sold-item" name="sold-item" type="hidden" value="{{owned_item.name}}">
+          {{sell_form.submit(class="btn btn-outline-danger ")}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

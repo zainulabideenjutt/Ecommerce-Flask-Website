@@ -1,0 +1,37 @@
+{% extends 'Base.html' %}
+{% block title %}
+ Item Register Page
+{% endblock %}
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <img class="mb-4"
+            src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png"
+            alt="Logo">
+
+        <h1 class="h3 mb-3 font-weight-normal">
+            Enter Item info :
+        </h1>
+        <form method="post" class="form" style="color: aliceblue;">
+            {{ form.hidden_tag() }}
+            {{form.name.label()}}
+            {{form.name(class='form-control',placeholder='Item Name')}}
+            {{form.price.label()}}
+            {{form.price(class='form-control',placeholder='Item Price')}}
+            {{form.barcode.label()}}
+            {{form.barcode(class='form-control',placeholder='Item Barcode')}}
+            {{form.description.label()}}
+            {{form.description(class='form-control',placeholder='Item Description')}}
+            <br>
+        <div class="checkbox mb-3">
+            <h6>
+                Want to go to Market Page?
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('market_page') }}">Market Page?</a>
+            </h6>
+        </div>
+            {{form.submit(class="btn btn-lg btn-primary")}}
+        </form>
+    </div>
+</body>
+{% endblock %}
