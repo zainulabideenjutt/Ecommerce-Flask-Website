@@ -8,8 +8,8 @@ Login Page
     <form method="POST" class="form-signin" style="color:white">
         {{ form.hidden_tag() }}
         <img class="mb-4"
-            src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png"
-            alt="">
+            src="{{ url_for('static', filename='images/sell.png') }}"
+            alt="" width="200" height="200">
         <h1 class="h3 mb-3 font-weight-normal">
             Please Login to Access Market Page
         </h1>

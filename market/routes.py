@@ -78,7 +78,7 @@ def register_page():
             username=form.username.data,
             email_address=form.email_address.data,
             password=form.password1.data
-        )
+        ) 
         db.session.add(user_to_create)
         db.session.commit()
         login_user(user_to_create)
